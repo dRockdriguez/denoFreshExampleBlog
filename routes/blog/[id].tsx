@@ -1,6 +1,7 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { loadPost } from "../../services/posts.ts";
 import { CSS } from "$gfm/mod.ts";
+import Button from "../../islands/Button.tsx";
 
 export const handler: Handlers = {
   async GET(request, context) {
@@ -17,6 +18,8 @@ export default function PagePost(props: PageProps) {
   return (
     <article class="p-4">
       <h1 class="text-5xl font-bold">{post.title}</h1>
+      <Button></Button>
+
       <time>{Intl.DateTimeFormat("es").format(post.date)}</time>
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
       <div
