@@ -5,6 +5,7 @@ import { logo } from "../utils/assets.ts";
 
 export const handler: Handlers = {
   async GET(request, context) {
+    console.log(context.state.data);
     const posts = await listPosts();
 
     return context.render({ posts });
