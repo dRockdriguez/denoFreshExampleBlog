@@ -1,7 +1,7 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { listPosts } from "../services/posts.ts";
 import { Post } from "../types.d.ts";
-import { asset } from "$fresh/src/runtime/utils.ts";
+import { logo } from "../utils/assets.ts";
 
 export const handler: Handlers = {
   async GET(request, context) {
@@ -18,7 +18,7 @@ export default function Home(props: PageProps) {
     <main class="p-4">
       <h1 class="text-2xl">Mi blog</h1>
 
-      <img src={asset("logo.svg")} alt="Logo" />
+      <img src={logo} alt="Logo" />
 
       {posts.map((post: Post) => (
         <article class="p-4">
